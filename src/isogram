@@ -1,0 +1,47 @@
+class Isogram {
+    static boolean isIsogram(String phrase) {
+
+        def result
+
+        def j = 0;
+        phrase = phrase.toLowerCase();
+        def numChar = phrase.length();
+        char[] charArray = new char[numChar];
+        char hyphen = '-';
+        char space = ' ';
+
+
+        //Checking if given string is empty or null
+        if (phrase == "" || phrase == null) {
+
+            return true;
+
+        }
+
+        //Creating an array with all the given string chars
+        for (int i = 0; i <= (numChar - 1); i++) {
+
+            charArray[i] = phrase.charAt(i);
+
+        }
+
+        Arrays.sort(charArray);
+
+        //Checking uniqueness within the created array
+        while (j < (numChar - 1)) {
+
+            if ((charArray[j] == charArray[j + 1]) && (charArray[j] != space) && (charArray[j] != hyphen)) {
+
+                return false;
+
+            }
+
+            j++;
+
+        }
+
+        return true;
+
+    }
+
+}
