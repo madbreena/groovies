@@ -1,0 +1,11 @@
+class Isogram {
+    static boolean isIsogram(String phrase) {
+        phrase
+                .replaceAll('-','')
+                .replaceAll(' ','')
+                .toLowerCase()
+                .toList()
+                .countBy {it}
+                .every {it.value == 1 }
+    }
+}
