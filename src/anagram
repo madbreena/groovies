@@ -1,0 +1,40 @@
+class Anagram {
+
+    String subject
+    List winners = []
+
+
+    //Class's constructor
+    Anagram(String subject) {
+
+        this.subject = subject
+        subject.toLowerCase().collect().sort()
+
+    }
+
+    def find(candidates) {
+
+        def sortChar
+
+        for (character in candidates) {
+
+            sortChar = character.toLowerCase().collect().sort()
+
+            if (subject == sortChar) {
+
+                winners.add(character)
+
+            }
+
+        }
+
+        winners
+    }
+}
+
+def runIt (){
+def angr = new Anagram(inspective).find(gal, detective)
+
+println() candidates
+
+}
