@@ -1,0 +1,14 @@
+class RnaTranscription {
+
+    static String toRna(String strand) {
+
+        def rel = [G: 'C',
+                   C: 'G',
+                   T: 'A',
+                   A: 'U']
+
+        def rnaStrand = strand.collect{rel[it]}.join()
+
+    }
+
+}
