@@ -2,17 +2,7 @@ class TwoFer {
 
     static String twoFer(String name) {
 
-        def twoFer
-
-        if (name) {
-
-            twoFer = "One for ${name}, one for me."
-
-        } else  {
-
-            twoFer = 'One for you, one for me.'
-
-        }
+        "One for ${name ?: 'you'}, one for me"
 
     }
 
