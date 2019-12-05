@@ -1,0 +1,11 @@
+class Pangram {
+
+    static alphabet = ('a'..'z')
+
+    static boolean isPangram(String sentence) {
+
+        def arr = sentence.toLowerCase().toSet().containsAll(alphabet)
+
+    }
+
+}
