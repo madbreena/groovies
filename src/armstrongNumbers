@@ -1,0 +1,26 @@
+class ArmstrongNumber {
+
+    static isArmstrongNumber(number) {
+
+        def num = number
+        def digitNumbers = []
+        def tran = 0
+
+        if (number) {
+
+            while (number > 0) {
+
+                digitNumbers += number % 10
+                number = (number / 10) as Integer
+
+            }
+
+            for (dig in digitNumbers) { tran += dig**digitNumbers.size() }
+
+            num - tran == 0
+
+        } else { number == 0 }
+
+    }
+
+}
