@@ -1,0 +1,20 @@
+
+class HighScores {
+    List scores;
+
+    HighScores(scores) {
+        this.scores = scores
+    }
+
+    def latest() {
+        scores.last()
+    }
+
+    def personalBest() {
+        scores.max()
+    }
+
+    def personalTopThree() {
+        scores.sort {-it}.take(3)
+    }
+}
