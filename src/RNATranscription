@@ -1,0 +1,9 @@
+class RnaTranscription {
+
+    static def translate = ['C':'G','G':'C','T':'A','A':'U']
+
+    static String toRna(String strand) {
+        strand.collect{val -> translate.get(val)}.join()
+    }
+
+}
