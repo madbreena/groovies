@@ -1,0 +1,5 @@
+
+static boolean isPangram(String sentence) {
+
+    sentence.toLowerCase().chars.findAll { it.isLetter() } as Set == ('a'..'z') as Set
+}

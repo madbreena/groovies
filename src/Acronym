@@ -1,0 +1,12 @@
+lass Acronym {
+
+    static String abbreviate(String phrase) {
+        phrase.toUpperCase()
+                .replaceAll('\'','')
+                .replaceAll('[^A-Z]',' ')
+                .tokenize()
+                .collect { it[0]}
+                .join()
+    }
+
+}
