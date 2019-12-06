@@ -1,0 +1,25 @@
+class Acronym {
+
+    static String abbreviate(String phrase) {
+        def cleanPhrase = phrase.replaceAll('\'', '')
+                .replaceAll('_', '')
+                .replaceAll('-',' ')
+                .toCharArray()
+
+        def res = [phrase.take(1)]
+
+        cleanPhrase.size().times {
+
+            if (cleanPhrase[it] == ' ' && cleanPhrase[it +1] != ' ') {
+
+                res += cleanPhrase[it + 1]
+
+            }
+
+        }
+
+        def result = res.join().toUpperCase()
+
+    }
+
+}
