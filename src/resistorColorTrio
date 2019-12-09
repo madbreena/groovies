@@ -1,0 +1,40 @@
+class ResistorColorTrio {
+
+    static colors = ['black',
+                     'brown',
+                     'red',
+                     'orange',
+                     'yellow',
+                     'green',
+                     'blue',
+                     'violet',
+                     'grey',
+                     'white']
+
+    static String label(List<String> colorsInput) {
+
+        def colorCodes = []
+        def ohms
+        def res
+
+        for (col in colorsInput) { colorCodes += colors.indexOf(col) }
+
+        res = colorCodes.take(2).join().toInteger()
+
+        ohms = colorCodes[2].toInteger()
+
+        res = res * 10 ** ohms
+
+        if (ohms < 2) {
+
+            res = res.toString() + ' ohms'
+
+        } else {
+
+            res = (res/1000).toString() + ' kiloohms'
+
+        }
+
+    }
+
+}
