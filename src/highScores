@@ -1,0 +1,13 @@
+class HighScores {
+
+    List<Integer> scores
+
+    HighScores(List<Integer> scores) { this.scores = scores }
+
+    int latest() { scores.last() }
+
+    int personalBest() { scores.max() }
+
+    List<Integer> personalTopThree() { def top3 = scores.collect().sort().reverse().take(3) }
+
+}
