@@ -1,40 +1,39 @@
 class Anagram {
 
-    String subject
-    List winners = []
+    def subject
 
-
-    //Class's constructor
     Anagram(String subject) {
 
         this.subject = subject
-        subject.toLowerCase().collect().sort()
 
     }
 
     def find(candidates) {
 
-        def sortChar
+        def subjAr = subject.toLowerCase().toCharArray()
+        Arrays.sort(subjAr)
+        def wordAr = []
+        def winners = []
 
-        for (character in candidates) {
+        for (can in candidates) {
 
-            sortChar = character.toLowerCase().collect().sort()
 
-            if (subject == sortChar) {
+            if (can.toLowerCase() != subject.toLowerCase()) {
+                wordAr = can.toLowerCase().toCharArray()
+                Arrays.sort(wordAr)
 
-                winners.add(character)
+                if (subjAr == wordAr) {
+
+                    winners += can
+
+                }
 
             }
 
         }
 
         winners
+
     }
-}
-
-def runIt (){
-def angr = new Anagram(inspective).find(gal, detective)
-
-println() candidates
 
 }
