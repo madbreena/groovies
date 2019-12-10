@@ -1,0 +1,41 @@
+class DifferenceOfSquares {
+
+    def num
+
+    DifferenceOfSquares(num) { this.num = num }
+
+    def squareOfSum() {
+
+        def res = 0
+        (1..num).each { res += it }
+        res ** 2
+
+    }
+
+    def sumOfSquares() {
+
+        def res = 0
+        (1..num).each { res += it ** 2 }
+        res
+
+    }
+
+    def difference() {
+
+        def result = 0
+        def res = 0
+        (1..num).each {
+
+            res += it
+            result += it ** 2
+
+        }
+
+        res = res ** 2
+        res - result
+
+    }
+
+}
+
+
