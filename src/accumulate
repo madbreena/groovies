@@ -1,0 +1,13 @@
+class Accumulate {
+
+    static accumulate(Collection collection, Closure func) {
+
+        def res = []
+
+        for (c in collection) { res.add(func(c))}
+
+        res
+
+    }
+
+}
