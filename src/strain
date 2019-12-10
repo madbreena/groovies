@@ -1,0 +1,22 @@
+class Strain {
+
+    static Collection keep(Collection collection, Closure predicate) {
+
+        def res = []
+
+        for (c in collection) { if (predicate(c)) { res += c } }
+
+        res
+
+    }
+
+    static Collection discard(Collection collection, Closure predicate) {
+
+        def res = []
+
+        for (c in collection) { if (!predicate(c)) { res += c } }
+
+        res
+
+    }
+}
