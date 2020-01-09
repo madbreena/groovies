@@ -1,0 +1,44 @@
+class RobotName {
+
+    String name
+    static Random rnd = new Random ()
+    static Set names =[]
+    private static final int MAX_NAMES = 676000
+    char character1
+    char character2
+    int number1
+    int number2
+    int number3
+
+    RobotName() {
+        if(names.size()==MAX_NAMES) {
+            throw new Exception("No more names here!!!")
+        }
+        setName()
+    }
+
+    void setName() {
+        String tmpName = generateName()
+        while (names.contains(tmpName)) {
+            tmpName = generateName()
+        }
+        this.name = tmpName
+        names << this.name
+    }
+
+    void reset() {
+        names.remove(name)
+        setName()
+    }
+
+    String generateName() {
+        character1 = rnd.nextInt(26) + 65
+        character2 = rnd.nextInt(26) + 65
+        number1 = rnd.nextInt(10)
+        number2 = rnd.nextInt(10)
+        number3 = rnd.nextInt(10)
+        new String(character1) + new String(character2) + number1 + number2 + number3
+    }
+
+
+}
